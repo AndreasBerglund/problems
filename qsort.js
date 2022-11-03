@@ -5,10 +5,8 @@
  * @returns {array} the sorted array
  */
 function qsort(arr) {
-  // Base case [1,0] or [0] or []
-  if (arr.length === 1 || arr.length === 0) return arr;
-  if (arr.length === 2)
-    return arr[0] > arr[1] ? [arr[1], arr[0]] : [arr[0], arr[1]];
+  // Base case [0] or []
+  if (arr.length < 2) return arr;
 
   // Recursive case pick a pivot
   const pivot = arr.shift();
