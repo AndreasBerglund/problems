@@ -2,6 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import BooksContainer from "./container_presentation/container/BooksContainer";
 import RichButton from "./hoc/Hoc";
+import CustomHook from "./hooks/CustomHook";
 import ShowRenderProps from "./render_props/RenderProps";
 
 const App = () => {
@@ -13,6 +14,8 @@ const App = () => {
       <RichButton />
       <h2>Render props pattern</h2>
       <ShowRenderProps />
+      <h2>Hooks pattern</h2>
+      <CustomHook />
     </div>
   );
 };
