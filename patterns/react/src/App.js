@@ -2,6 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 import BooksContainer from "./container_presentation/container/BooksContainer";
 import RichButton from "./hoc/Hoc";
+import ShowRenderProps from "./render_props/RenderProps";
 
 const App = () => {
   return (
@@ -10,6 +11,8 @@ const App = () => {
       <BooksContainer />
       <h2>Higher order component pattern</h2>
       <RichButton />
+      <h2>Render props pattern</h2>
+      <ShowRenderProps />
     </div>
   );
 };
