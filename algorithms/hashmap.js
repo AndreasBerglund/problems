@@ -1,26 +1,26 @@
 /**
  * The simplest and stupidest way to implement a pseudo hashmap of length 5
  */
-const hashmap = {
-  map: [[], [], [], [], []],
-  find: function (key) {
+function HashMap() {
+  this.map = [[], [], [], [], []];
+  this.find = function (key) {
     const index = this.hash(key);
     if (this.map[index].length > 0) {
       for (let i = 0; i < this.map[index].length; i++) {
         if (this.map[index][i][0] === key) return this.map[index][i][1];
       }
     }
-  },
-  insert: function (key, value) {
+  };
+  this.insert = function (key, value) {
     const index = this.hash(key);
     this.map[index].push([key, value]);
-  },
+  };
   /**
    * This is the function that assigns a slot in the map / array
    * @param {string} key
    * @returns {number}
    */
-  hash: function (key) {
+  this.hash = function (key) {
     // Map every letter to a prime number, the assigned slot is sum of prime number modulo length of array
     const az = "abcdefghijklmnopqrstuvwxyz".split(""); // this should not be done every time, but oh well
     const primes = [
@@ -34,17 +34,18 @@ const hashmap = {
       sum += primes[index];
     }
     return sum % 5;
-  },
-};
+  };
+}
 
+const hashmap = new HashMap();
 hashmap.insert("pear", 5);
 hashmap.insert("apple", 10);
 hashmap.insert("banana", 10);
 hashmap.insert("pineapple", 10);
 hashmap.insert("lemon", 10);
 
-const lemon_price = hashmap.find("lemon"); //10
-const cucumber_price = hashmap.find("cucumber"); //undefined
+const hashmap2 = new HashMap();
+console.log(hashmap2.map); // [ [], [], [] ,[], [] ]
 
-console.log(lemon_price);
-console.log(cucumber_price);
+console.log(hashmap.find("lemon")); //10
+console.log(hashmap.find("cucumber")); //undefined
