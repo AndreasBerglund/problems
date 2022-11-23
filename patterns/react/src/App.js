@@ -1,6 +1,7 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
 import BooksContainer from "./container_presentation/container/BooksContainer";
+import ErrorExample from "./error_boundary/ErrorExample";
 import RichButton from "./hoc/Hoc";
 import CustomHook from "./hooks/CustomHook";
 import ConsumerOfTheme from "./provider/ConsumerOfTheme";
@@ -21,6 +22,8 @@ const App = () => {
         <CustomHook />
         <h2>Provider pattern</h2>
         <ConsumerOfTheme />
+        <h2>ErrorBoundary</h2>
+        <ErrorExample />
       </div>
     </ThemeProviderWrapper>
   );
